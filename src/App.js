@@ -1,5 +1,12 @@
+import MainScreen from "./components/MainScreen/MainScreen";
+import Participants from "./components/Participants/Participants";
+
 function App() {
-  return <div>Google Meet Clone</div>;
+  return (
+    <MainScreen>
+      <Participants />
+    </MainScreen>
+  );
 }
 
 export default App;
