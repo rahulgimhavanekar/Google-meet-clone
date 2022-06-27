@@ -4,9 +4,10 @@ import MessageBox from "../Sidebar/MessageBox";
 import ParticipantsBox from "../Sidebar/ParticipantsBox";
 import { GlobalContext } from "../../context/globalState";
 import classes from "./Participants.module.css";
+import InfoBox from "../Sidebar/InfoBox";
 
 const Participants = () => {
-  const { participants, messageBox, participantsBox } =
+  const { participants, messageBox, participantsBox, infoBox } =
     useContext(GlobalContext);
 
   return (
@@ -22,6 +23,7 @@ const Participants = () => {
           );
         })}
       </div>
+      {infoBox && <InfoBox />}
       {messageBox && <MessageBox />}
       {participantsBox && <ParticipantsBox />}
     </div>

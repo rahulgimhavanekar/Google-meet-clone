@@ -48,6 +48,7 @@ const initialState = {
   totalParticipants: participantsList.length,
   messageBox: false,
   participantsBox: false,
+  infoBox: false,
 };
 
 export const GlobalContext = React.createContext(initialState);
@@ -66,6 +67,13 @@ const globalReducer = (state, action) => {
         participantsBox: true,
         messageBox: false,
       };
+    case "SHOW_INFO":
+      return {
+        ...state,
+        participantsBox: false,
+        messageBox: false,
+        infoBox: true,
+      };
     case "HIDE_CHAT":
       return {
         ...state,
@@ -75,6 +83,11 @@ const globalReducer = (state, action) => {
       return {
         ...state,
         participantsBox: false,
+      };
+    case "HIDE_INFO":
+      return {
+        ...state,
+        infoBox: false,
       };
     default:
       return state;
@@ -100,6 +113,14 @@ export const GlobalContextProvider = (props) => {
     dispatch({ type: "HIDE_PARTICIPANTS" });
   };
 
+  const showInfo = () => {
+    dispatch({ type: "SHOW_INFO" });
+  };
+
+  const hideInfo = () => {
+    dispatch({ type: "HIDE_INFO" });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -111,6 +132,8 @@ export const GlobalContextProvider = (props) => {
         hideChat: hideChat,
         showParticipants: showParticipants,
         hideParticipants: hideParticipants,
+        showInfo: showInfo,
+        hideInfo: hideInfo,
       }}
     >
       {props.children}

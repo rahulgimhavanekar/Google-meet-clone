@@ -8,7 +8,7 @@ const Footer = () => {
     video: true,
   });
 
-  const { showChat, showParticipants } = useContext(GlobalContext);
+  const { showChat, showParticipants, showInfo } = useContext(GlobalContext);
 
   const micClickHandler = () => {
     setStreamState((prevState) => {
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={classes.right}>
-        <div className={classes.right_icon}>
+        <div className={classes.right_icon} onClick={(e) => showInfo()}>
           <span className={`material-icons-outlined ${classes.md_light}`}>
             info
           </span>
