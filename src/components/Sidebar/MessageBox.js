@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/globalState";
 import classes from "./MessageBox.module.css";
 
 const DUMMY_MESSAGES = [
@@ -23,12 +24,21 @@ const DUMMY_MESSAGES = [
 ];
 
 const MessageBox = () => {
+  const { hideChat } = useContext(GlobalContext);
+
   return (
     <div className={classes.box}>
       <div className={classes.content}>
         <div className={classes.heading}>
           <p>In-call messages</p>
-          <span class="material-icons-outlined">close</span>
+          <span
+            class="material-icons-outlined"
+            onClick={(e) => {
+              hideChat();
+            }}
+          >
+            close
+          </span>
         </div>
         <div className={classes.note}>
           Messages can only be seen by people in the call and are deleted when

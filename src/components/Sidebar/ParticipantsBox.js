@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/globalState";
 import classes from "./ParticipantsBox.module.css";
 
 const DUMMY_DATA = [
@@ -25,11 +26,20 @@ const DUMMY_DATA = [
 ];
 
 const ParticipantsBox = () => {
+  const { hideParticipants } = useContext(GlobalContext);
+
   return (
     <div className={classes.box}>
       <div className={classes.heading}>
         <p>People</p>
-        <span class="material-icons-outlined">close</span>
+        <span
+          class="material-icons-outlined"
+          onClick={(e) => {
+            hideParticipants();
+          }}
+        >
+          close
+        </span>
       </div>
       <div className={classes.add_people}>
         <span class="material-icons-outlined">person_add_alt</span>

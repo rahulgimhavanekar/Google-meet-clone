@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../../context/globalState";
 import classes from "./Footer.module.css";
 
 const Footer = () => {
@@ -6,6 +7,8 @@ const Footer = () => {
     mic: true,
     video: true,
   });
+
+  const { showChat, showParticipants } = useContext(GlobalContext);
 
   const micClickHandler = () => {
     setStreamState((prevState) => {
@@ -74,12 +77,12 @@ const Footer = () => {
             info
           </span>
         </div>
-        <div className={classes.right_icon}>
+        <div className={classes.right_icon} onClick={(e) => showParticipants()}>
           <span className={`material-icons-outlined ${classes.md_light}`}>
             people
           </span>
         </div>
-        <div className={classes.right_icon}>
+        <div className={classes.right_icon} onClick={(e) => showChat()}>
           <span className={`material-icons-outlined ${classes.md_light}`}>
             chat
           </span>
