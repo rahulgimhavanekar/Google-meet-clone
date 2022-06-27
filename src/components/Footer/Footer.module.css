@@ -22,16 +22,24 @@
   color: #fff;
 }
 
-.mid_icon {
-  cursor: pointer;
+.mid_icon,
+.right_icon {
   width: 40px;
   height: 40px;
   padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #3c4043;
+  cursor: pointer;
   border-radius: 50%;
+}
+
+.mid_icon {
+  background-color: #3c4043;
+}
+
+.mid_icon:hover {
+  background-color: rgba(60, 64, 67, 0.8);
 }
 
 .off {
@@ -42,4 +50,21 @@
   background-color: #ea4335;
   width: 60px;
   border-radius: 24px;
+}
+
+.phone:hover {
+  background-color: rgba(234, 67, 53, 0.9);
+}
+
+.right_icon span:hover {
+  color: #8ab4f8;
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    height: 15vh;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
 }

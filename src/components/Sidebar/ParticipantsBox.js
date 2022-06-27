@@ -2,31 +2,8 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../context/globalState";
 import classes from "./ParticipantsBox.module.css";
 
-const DUMMY_DATA = [
-  {
-    id: 1,
-    name: "Thomas Wagner",
-    avatarColor: "#4285f4",
-  },
-  {
-    id: 2,
-    name: "William Compton",
-    avatarColor: "#ea4335",
-  },
-  {
-    id: 3,
-    name: "Joan Morton",
-    avatarColor: "#fbbc05",
-  },
-  {
-    id: 4,
-    name: "Debbie Flemings",
-    avatarColor: "#34a853",
-  },
-];
-
 const ParticipantsBox = () => {
-  const { hideParticipants } = useContext(GlobalContext);
+  const { participants, hideParticipants } = useContext(GlobalContext);
 
   return (
     <div className={classes.box}>
@@ -57,7 +34,7 @@ const ParticipantsBox = () => {
       </div>
       <div>
         <p>In call</p>
-        {DUMMY_DATA.map((participant) => {
+        {participants.map((participant) => {
           return (
             <div key={participant.id} className={classes.participant}>
               <div
