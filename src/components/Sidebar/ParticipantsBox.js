@@ -33,7 +33,7 @@ const ParticipantsBox = () => {
       <div className={classes.heading}>
         <p>People</p>
         <span
-          class="material-icons-outlined"
+          className="material-icons-outlined"
           onClick={(e) => {
             hideParticipants();
           }}
@@ -42,11 +42,13 @@ const ParticipantsBox = () => {
         </span>
       </div>
       <div className={classes.add_people}>
-        <span class="material-icons-outlined">person_add_alt</span>
+        <span className="material-icons-outlined">person_add_alt</span>
         <p>Add people</p>
       </div>
       <div className={classes.input_group}>
-        <span class={`material-icons-outlined ${classes.icon}`}>search</span>
+        <span className={`material-icons-outlined ${classes.icon}`}>
+          search
+        </span>
         <input
           type="text"
           placeholder="Search for People"

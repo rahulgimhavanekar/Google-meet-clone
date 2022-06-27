@@ -32,7 +32,7 @@ const MessageBox = () => {
         <div className={classes.heading}>
           <p>In-call messages</p>
           <span
-            class="material-icons-outlined"
+            className="material-icons-outlined"
             onClick={(e) => {
               hideChat();
             }}
@@ -62,7 +62,7 @@ const MessageBox = () => {
           className={classes.field}
           placeholder="Send message to everyone"
         />
-        <span class={`material-icons-outlined ${classes.icon}`}>send</span>
+        <span className={`material-icons-outlined ${classes.icon}`}>send</span>
       </div>
     </div>
   );
