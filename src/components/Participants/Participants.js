@@ -1,5 +1,7 @@
 import React from "react";
 import Participant from "./Participant";
+import MessageBox from "../Sidebar/MessageBox";
+import ParticipantsBox from "../Sidebar/ParticipantsBox";
 import classes from "./Participants.module.css";
 
 const DUMMY_DATA = [
@@ -39,8 +41,8 @@ const DUMMY_DATA = [
     avatarColor: "#fc7e8a",
   },
   {
-    id: 1,
-    name: "Thomas Wagner",
+    id: 8,
+    name: "John Doe",
     avatarColor: "#79d2b8",
   },
 ];

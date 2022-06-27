@@ -1,0 +1,68 @@
+.box {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.note {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #f1f3f4;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+
+.message {
+  margin-top: 1rem;
+}
+
+.user {
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.time {
+  font-size: 0.8rem;
+  color: #949494;
+}
+
+.text {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.input_group {
+  position: relative;
+}
+
+.field {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  color: #000;
+  background-color: #8ab4f8;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 18px;
+}
+
+.icon {
+  color: #949494;
+  position: absolute;
+  top: 4px;
+  right: 10px;
+}
